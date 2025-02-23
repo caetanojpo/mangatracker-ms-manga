@@ -23,28 +23,24 @@ public class Manga {
     private final boolean isLocked;
     private final String state;
 
-    public Manga(String id, String title, List<String> altTitles, List<String> description, MangaStatus status, int year,
-                 Set<String> genres, String originalLanguage, String demographic, String contentRating,
-                 List<String> tags, Map<String, String> links, List<String> availableTranslatedLanguages,
-                 String lastVolume, String lastChapter, boolean isLocked, String state) {
-
-        this.id = Objects.requireNonNull(id, "ID cannot be null");
-        this.title = Objects.requireNonNull(title, "Title cannot be null");
-        this.altTitles = List.copyOf(Objects.requireNonNull(altTitles, "Alternative titles cannot be null"));
-        this.description = List.copyOf(Objects.requireNonNull(description, "Description cannot be null"));
-        this.status = Objects.requireNonNull(status, "Status cannot be null");
+    public Manga(String id, String title, List<String> altTitles, List<String> description, MangaStatus status, int year, Set<String> genres, String originalLanguage, String demographic, String contentRating, List<String> tags, Map<String, String> links, List<String> availableTranslatedLanguages, String lastVolume, String lastChapter, boolean isLocked, String state) {
+        this.id = id;
+        this.title = title;
+        this.altTitles = altTitles;
+        this.description = description;
+        this.status = status;
         this.year = year;
-        this.genres = Set.copyOf(Objects.requireNonNull(genres, "Genres cannot be null"));
-        this.originalLanguage = Objects.requireNonNull(originalLanguage, "Original language cannot be null");
-        this.demographic = Objects.requireNonNull(demographic, "Demographic cannot be null");
-        this.contentRating = Objects.requireNonNull(contentRating, "Content rating cannot be null");
-        this.tags = List.copyOf(Objects.requireNonNull(tags, "Tags cannot be null"));
-        this.links = Map.copyOf(Objects.requireNonNull(links, "Links cannot be null"));
-        this.availableTranslatedLanguages = List.copyOf(Objects.requireNonNull(availableTranslatedLanguages, "Available translated languages cannot be null"));
+        this.genres = genres;
+        this.originalLanguage = originalLanguage;
+        this.demographic = demographic;
+        this.contentRating = contentRating;
+        this.tags = tags;
+        this.links = links;
+        this.availableTranslatedLanguages = availableTranslatedLanguages;
         this.lastVolume = lastVolume;
         this.lastChapter = lastChapter;
         this.isLocked = isLocked;
-        this.state = Objects.requireNonNull(state, "State cannot be null");
+        this.state = state;
     }
 
     // Getters
